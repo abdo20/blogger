@@ -14,14 +14,13 @@
       <ul class="nav">
         <li><%= link_to "Home", articles_path %></li>
         <li><%= link_to "Tags", tags_path %></li>
-        <li>
           <%if logged_in? %>
-            <%= "#{current_user.username}" %>
-            <%= link_to "(logout)", logout_path %>
+            <li><%= "#{current_user.username}" %></li>
+            <li><%= link_to "logout", logout_path %></li>
           <% else %>
-            <%= link_to "(login)", login_path %>
+            <li><%= link_to "login", login_path %></li>
+            <li><%= link_to "signin", new_user_path %></li>
           <% end %>
-        </li>
       </ul>
     </div>
     <div id="container">
